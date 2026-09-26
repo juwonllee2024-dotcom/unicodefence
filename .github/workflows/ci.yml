@@ -29,4 +29,4 @@ jobs:
       - name: Build
         run: python -m build
       - name: Audit dependencies
-        run: python -m pip_audit
+        run: python -m pip_audit --requirement requirements-audit.txt --no-deps --disable-pip
