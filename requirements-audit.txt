@@ -1,0 +1,1 @@
+# UnicodeFence has no runtime dependencies.

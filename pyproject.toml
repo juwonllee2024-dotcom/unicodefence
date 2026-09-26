@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unicodefence"
+version = "0.1.0"
+description = "Reveal invisible Unicode controls before text reaches an AI tool."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "juwonllee2024-dotcom" }]
+dependencies = []
+classifiers = [
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Security",
+]
+
+[project.optional-dependencies]
+dev = [
+  "build>=1.2",
+  "mypy>=1.11",
+  "pip-audit>=2.7",
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+unicodefence = "unicodefence.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+strict = true
+packages = ["unicodefence"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
